@@ -13,4 +13,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY /src .
 
 # Command to run the bot
-CMD python3 /app/src/gossip_bot.py;
+CMD python3 /app/gossip_bot.py;

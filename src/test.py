@@ -1,7 +1,7 @@
-from settings import Settings 
+from config import Config 
 import unittest
 
-SETTINGS = Settings()
+SETTINGS = Config()
 
 class TestSettings(unittest.TestCase):
     def test_get_access_token(self):
@@ -10,6 +10,8 @@ class TestSettings(unittest.TestCase):
         self.__test_settings_value(SETTINGS.get_chat_id)
     def test_access_check(self):
         self.__test_settings_value(SETTINGS.is_access_check_enable)
+    def test_public_password(self):
+        self.__test_settings_value(SETTINGS.get_public_password)
 
     def __test_settings_value(self, func):
         value = func()

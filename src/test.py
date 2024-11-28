@@ -1,4 +1,4 @@
-from config import Config 
+from env_config import Config 
 import unittest
 
 SETTINGS = Config()
@@ -10,8 +10,8 @@ class TestSettings(unittest.TestCase):
         self.__test_settings_value(SETTINGS.get_chat_id)
     def test_access_check(self):
         self.__test_settings_value(SETTINGS.is_access_check_enable)
-    def test_public_password(self):
-        self.__test_settings_value(SETTINGS.get_public_password)
+    def test_coreteam_people(self):
+        self.__test_settings_value(SETTINGS.get_coreteam_people)
 
     def __test_settings_value(self, func):
         value = func()

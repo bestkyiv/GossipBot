@@ -9,4 +9,4 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 ENV PYTHONUNBUFFERED=1
 
 # Run gossip_bot.py when the container launches
-CMD ["python", "gossip_bot.py"]
+CMD ["python", "src/gossip_bot.py"]

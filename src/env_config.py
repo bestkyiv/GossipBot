@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 
 class Config:
 	__TELEGRAM_BOT_TOKEN_ENV = "TELEGRAM_BOT_TOKEN"
+	__TELEGRAM_BOT_TOKEN_DEV_ENV = "TELEGRAM_BOT_TOKEN_DEV"
 	__ACCESS_CHECK_ENV = "ACCESS_CHECK"
 	__DEBUG_ENV = "DEBUG"
 	__LOCAL_CHAT_ID_ENV = "LOCAL_CHAT_ID"
@@ -15,7 +16,6 @@ class Config:
 
 		# environment variables
 		load_dotenv()
-		self.__access_token = os.getenv(self.__TELEGRAM_BOT_TOKEN_ENV)
 		self.__log_chat_id = os.getenv(self.__LOG_CHAT_ID_ENV)
 		self.__debug = get_env_bool(self.__DEBUG_ENV)
 		self.__access_check = get_env_bool(self.__ACCESS_CHECK_ENV)
@@ -23,8 +23,10 @@ class Config:
 
 		if self.__debug is True:
 			self.__chat_id = os.getenv(self.__LOCAL_CHAT_ID_ENV)
+			self.__access_token = os.getenv(self.__TELEGRAM_BOT_TOKEN_DEV_ENV)
 		else:
 			self.__chat_id = os.getenv(self.__STAGE_CHAT_ID_ENV)
+			self.__access_token = os.getenv(self.__TELEGRAM_BOT_TOKEN_ENV)
 
 	def get_access_token(self) -> str:
 		return self.__access_token

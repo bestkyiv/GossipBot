@@ -39,6 +39,8 @@ async def help_async(update: Update, context: ContextTypes.DEFAULT_TYPE):
 	"""
 		Надішліть повідомлення мені, і я перешлю його у обраний чат.\n
 		Якщо у вас немає доступу, зверніться до @eltagun.
+
+		V 2.0
 	"""
 	await update.message.reply_text(text)
 

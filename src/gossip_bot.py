@@ -106,7 +106,7 @@ async def forward_photo_async(message: Message, context: ContextTypes.DEFAULT_TY
 		parse_mode='HTML')
 
 async def forward_media_group_async(update: Update, context: ContextTypes.DEFAULT_TYPE):
-	await update.message.reply_text("Я не вмію в групові фото. Надішліть їх по одному з підписом.")
+	await update.message.reply_text("Я не вмію в групові фото😢. Надішліть їх по одному з підписом(або без)")
 	return
 
 def access_granted(update: Update) -> bool:
